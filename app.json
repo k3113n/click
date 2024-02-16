@@ -23,7 +23,12 @@
       }
     },
     "android": {
-      "package": "com.nellek.click"
+      "package": "com.nellek.click",
+      "versionCode": 1,
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -33,9 +38,17 @@
       [
         "expo-font",
         {
-          "fonts": ["./assets/fonts/mono.ttf", "./assets/fonts/roboto.ttf"]
+          "fonts": [
+            "./assets/fonts/mono.ttf",
+            "./assets/fonts/roboto.ttf"
+          ]
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "f7b5bc2a-3b81-46d0-aabc-6241e80a1630"
+      }
+    }
   }
 }
