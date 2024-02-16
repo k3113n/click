@@ -43,6 +43,14 @@
             "./assets/fonts/roboto.ttf"
           ]
         }
+      ],      
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "enableProguardInReleaseBuilds": true
+          }
+        }
       ]
     ],
     "extra": {
