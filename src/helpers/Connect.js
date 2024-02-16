@@ -23,11 +23,9 @@ class Service {
         }
         this.socket.onerror = (event) => {
             console.log("error: "+event.message);
-            //setTimeout(() => this.connect(), 3000);
         }
     }
     send(message) {
-        console.log(message);
         if (this.socket && this.connected) {
             console.log("message sent: "+message);
             this.socket.send(message);

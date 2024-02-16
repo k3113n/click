@@ -29,8 +29,13 @@
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "expo-font",
-      "expo-av"
+      "expo-av",
+      [
+        "expo-font",
+        {
+          "fonts": ["./assets/fonts/mono.ttf", "./assets/fonts/roboto.ttf"]
+        }
+      ]
     ]
   }
 }

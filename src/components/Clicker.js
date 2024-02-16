@@ -52,9 +52,33 @@ const getStyle = (cap = true, color, text, led = false, rgb) => {
     });
 }
 
+const keys = [
+    'blue',
+    'red'
+]
+
+const down = [
+    require('../../assets/audio/down/blue.wav'),
+    require('../../assets/audio/down/red.wav')
+];
+
+const up = [
+    require('../../assets/audio/up/blue.wav'),
+    require('../../assets/audio/up/red.wav')
+];
+
+const getDown = (name) => {
+    return down[keys.indexOf(name)];
+}
+
+const getUp = (name) => {
+    return up[keys.indexOf(name)];
+}
+
 const Clicker = (props) => {
     const [scale, setScale] = useState(1);
     const [sound, setSound] = useState(null);
+    const name = props.haptics ? 'blue' : 'red';
 
     const style = getStyle(props.cap, props.bg, props.fg, props.led, props.rgb);
 
@@ -67,21 +91,22 @@ const Clicker = (props) => {
     const pressIn = async () => {
         props.handler();
         setScale(0.95);
-        await playSound(require('../../assets/audio/down.wav'));
+        playSound(getDown(name));
         if(props.haptics){
             Haptics.notificationAsync(
-              Haptics.NotificationFeedbackType.Success
-            );
+                Haptics.NotificationFeedbackType.Success
+            )
         }
     };
 
     const pressOut = async () => {
         setScale(1);
-        await playSound(require('../../assets/audio/up.wav'));
+        playSound(getUp(name));
     };
 
+
     useEffect(() => {
-      return sound
+        return sound
         ? () => {
             sound.unloadAsync();
           }
@@ -100,7 +125,7 @@ const Clicker = (props) => {
                         </View>
                 </Pressable>
                 </View>
-                { props.led && props.cap ? <Led color={props.rgb} ss={style.led} /> : <></> }
+                { props.led && props.cap && scale === 1 ? <Led color={props.rgb} ss={style.led} /> : <></> }
             </Animated.View>
             { props.led && !props.cap ? <Led color={props.rgb} ss={style.led} /> : <></> }
         </View>
