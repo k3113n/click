@@ -2,10 +2,11 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import React from 'react';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
-import { store, persistor } from './src/state/store';
+import { store, persistor } from './state/store';
 import { StatusBar } from 'expo-status-bar';
-import {useState, useEffect, useRef, useCallback} from 'react';
-import {Text, View, ScrollView, SafeAreaView, Image, Modal, Pressable, Switch, StyleSheet} from 'react-native';
+import { useState, useEffect, useRef, useCallback } from 'react';
+import { Text, View, SafeAreaView, Image, Pressable, StyleSheet } from 'react-native';
+import { Link } from 'expo-router';
 import * as Font from 'expo-font';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faGear } from '@fortawesome/free-solid-svg-icons/faGear';
@@ -14,17 +15,16 @@ import { set } from './state/CountSlice';
 import * as SplashScreen from 'expo-splash-screen';
 import Service from './helpers/Connect';
 import Clicker from './components/Clicker';
-import Settings from '../settings';
 
 SplashScreen.preventAutoHideAsync();
 
 const fetchFonts = async () => await Font.loadAsync({
   'Noto-mono': require('../assets/fonts/mono.ttf'),
+  'Roboto': require('../assets/fonts/roboto.ttf')
 });
 
 export function ClickScreen() {
   const [loaded, setLoaded] = useState(false);
-  const [settings, setSettings] = useState(false);
 
   const dispatch = useDispatch();
   const count = useSelector((state) => state.count.value);
@@ -84,55 +84,41 @@ export function ClickScreen() {
   }
 
   return (
-    <SafeAreaView onLayout={onLayoutRootView} style={[styles.safe, {backgroundColor: "#363636"}]}>
-      <View style={[styles.container]}>
-        <View style={[styles.top]}>
-          <Text
-            adjustsFontSizeToFit
-            style={styles.numbers}>
-            {multiline(count)}
-          </Text>
-          <Pressable
-            style={[styles.settingsOpen]}
-            onPress={() => setSettings(true)}>
-            <FontAwesomeIcon icon={faGear} color={'gray'} size={32}/>
-          </Pressable>
-          <Modal
-            animationType="slide"
-            transparent={true}
-            visible={settings}
-            onRequestClose={() => {
-              setSettings(!settings);
-            }}>
-            <View style={styles.centeredView}>
-              <View style={styles.modalView}>
-                <Pressable
-                  style={[styles.settingsClose]}
-                  onPress={() => setSettings(!settings)}>
-                </Pressable>
-                <Settings />
-             </View>
+      <SafeAreaView onLayout={onLayoutRootView} style={[styles.safe, {backgroundColor: "#363636"}]}>
+        <View style={[styles.container]}>
+          <View style={[styles.top]}>
+            <Text
+              adjustsFontSizeToFit
+              style={styles.numbers}>
+              {multiline(count)}
+            </Text>
+            <Link href="/settings">
+              <Pressable
+                style={[styles.settingsOpen]}
+                onPress={() => setSettings(true)}>
+                <FontAwesomeIcon icon={faGear} color={'gray'} size={32}/>
+              </Pressable>
+            </Link>
+          </View>
+          <View style={[styles.bottom]}>
+            <View style={styles.plate}>
+              <Clicker handler={() => click()} cap={keycap} bg={bg} fg={txt} led={led} rgb={rgb} haptics={haptics}/>
+              <Image
+                style={styles.switch}
+                source={haptics ? require('../assets/blue.png') : require('../assets/red.png')}
+              />
             </View>
-          </Modal>
-        </View>
-        <View style={[styles.bottom]}>
-          <View style={styles.plate}>
-            <Clicker handler={() => click()} cap={keycap} bg={bg} fg={txt} led={led} rgb={rgb} haptics={haptics}/>
-            <Image
-              style={styles.switch}
-              source={haptics ? require('../assets/blue.png') : require('../assets/red.png')}
-            />
           </View>
         </View>
-      </View>
-      <StatusBar style="auto" />
-    </SafeAreaView>
+        <StatusBar style="auto" />
+      </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   safe: {
     flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
   },
   container: {
