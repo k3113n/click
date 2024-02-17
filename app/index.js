@@ -1,16 +1,20 @@
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import React from 'react';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import { store, persistor } from './src/state/store';
 import { StatusBar } from 'expo-status-bar';
 import {useState, useEffect, useRef, useCallback} from 'react';
 import {Text, View, ScrollView, SafeAreaView, Image, Modal, Pressable, Switch, StyleSheet} from 'react-native';
 import * as Font from 'expo-font';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faGear } from '@fortawesome/free-solid-svg-icons/faGear';
-import { faXmarkCircle } from '@fortawesome/free-solid-svg-icons/faXmarkCircle';
 import { useDispatch, useSelector } from 'react-redux';
 import { set } from './state/CountSlice';
 import * as SplashScreen from 'expo-splash-screen';
 import Service from './helpers/Connect';
 import Clicker from './components/Clicker';
-import Settings from './components/Settings';
+import Settings from '../settings';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -18,7 +22,7 @@ const fetchFonts = async () => await Font.loadAsync({
   'Noto-mono': require('../assets/fonts/mono.ttf'),
 });
 
-export default function ClickScreen() {
+export function ClickScreen() {
   const [loaded, setLoaded] = useState(false);
   const [settings, setSettings] = useState(false);
 
@@ -105,7 +109,6 @@ export default function ClickScreen() {
                 <Pressable
                   style={[styles.settingsClose]}
                   onPress={() => setSettings(!settings)}>
-                  <FontAwesomeIcon icon={faXmarkCircle} color={'lightgray'} size={16}/>
                 </Pressable>
                 <Settings />
              </View>
@@ -171,38 +174,24 @@ const styles = StyleSheet.create({
       minHeight: 100,
       resizeMode: "contain",
       zIndex: -2,
-      bottom: "104%"
-  },
-  centeredView: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  modalView: {
-    margin: 20,
-    width: "70%",
-    height: "40%",
-    backgroundColor: 'rgba(75, 75, 75, 0.9)',
-    borderRadius: 20,
-    padding: "5%",
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5,
+      bottom: "104%",
   },
   settingsOpen: {
     position: 'absolute',
     top: "5%",
     right: 0
-  },
-  settingsClose: {
-    position: 'absolute',
-    top: 10,
-    right: 10
-  },
+  }
 });
+
+const App = () => {
+  return (
+    <GestureHandlerRootView style={{flex: 1}}>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <ClickScreen />
+        </PersistGate>
+      </Provider>
+    </GestureHandlerRootView>
+  );
+};
+export default App;
