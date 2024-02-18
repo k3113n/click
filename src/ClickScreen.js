@@ -133,7 +133,7 @@ const ClickScreen = () => {
                     </View>
                 </View>
             </View>
-            <StatusBar style="auto" />
+            <StatusBar style="light" />
         </SafeAreaView>
     );
 }
