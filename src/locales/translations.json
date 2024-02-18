@@ -1,0 +1,422 @@
+{
+"af": {
+"Settings": "Instellings",
+"Keycap": "Sleutelkap",
+"Text Color": "Teks kleur",
+"Haptic Feedback": "Haptiese terugvoer"
+},
+"ak": {
+"Settings": "Nsiesiei a Wɔde Yɛ Adwuma",
+"Keycap": "Keycap a wɔde hyɛ mu",
+"Text Color": "Nsɛm a Wɔakyerɛw no Kɔla",
+"Haptic Feedback": "Haptic Nsɛm a Wɔde Ma"
+},
+"sq": {
+"Settings": "Cilësimet",
+"Keycap": "Kapëse kyçe",
+"Text Color": "Ngjyra e tekstit",
+"Haptic Feedback": "Feedback haptik"
+},
+"am": {
+"Settings": "ቅንብሮች",
+"Keycap": "የቁልፍ መያዣ",
+"Text Color": "የጽሑፍ ቀለም",
+"Haptic Feedback": "ሃፕቲክ ግብረመልስ"
+},
+"ar": {
+"Settings": "ﺕﺍﺩﺍﺪﻋﺇ",
+"Keycap": "ﺡﺎﺘﻔﻤﻟﺍ ءﺎﻄﻏ",
+"Text Color": "ﻂﺨﻟﺍ ﻥﻮﻟ",
+"Haptic Feedback": "ﺔﻴﺴﻤﻠﻟﺍ ﻞﻌﻔﻟﺍ ﺩﻭﺩﺭ"
+},
+"hy": {
+"Settings": "Կարգավորումներ",
+"Keycap": "Keycap",
+"Text Color": "Տեքստի գույն",
+"Haptic Feedback": "Հափտիկ հետադարձ կապ"
+},
+"az": {
+"Settings": "Parametrlər",
+"Keycap": "Klaviatura qapağı",
+"Text Color": "Mətn Rəngi",
+"Haptic Feedback": "Haptik Əlaqə"
+},
+"bn": {
+"Settings": "সেটিংস",
+"Keycap": "কীক্যাপ",
+"Text Color": "লেখার রঙ",
+"Haptic Feedback": "হ্যাপটিক ফিডব্যাক"
+},
+"eu": {
+"Settings": "Ezarpenak",
+"Keycap": "Teklatu",
+"Text Color": "Testuaren kolorea",
+"Haptic Feedback": "Feedback haptikoa"
+},
+"be": {
+"Settings": "Налады",
+"Keycap": "Каўпачок клавіш",
+"Text Color": "Колер тэксту",
+"Haptic Feedback": "Тактыльная зваротная сувязь"
+},
+"bg": {
+"Settings": "Настройки",
+"Keycap": "Ключалка",
+"Text Color": "Цвят на текста",
+"Haptic Feedback": "Хаптична обратна връзка"
+},
+"my": {
+"Settings": "ဆက်တင်များ",
+"Keycap": "သော့ချိတ်",
+"Text Color": "စာသားအရောင်",
+"Haptic Feedback": "Haptic တုံ့ပြန်ချက်"
+},
+"ca": {
+"Settings": "Configuració",
+"Keycap": "Tecla",
+"Text Color": "Color del text",
+"Haptic Feedback": "Feedback hàptic"
+},
+"zh": {
+"Settings": "设置",
+"Keycap": "键帽",
+"Text Color": "文字颜色",
+"Haptic Feedback": "触觉反馈"
+},
+"hr": {
+"Settings": "postavke",
+"Keycap": "Poklopac tipke",
+"Text Color": "Boja teksta",
+"Haptic Feedback": "Taktilna povratna informacija"
+},
+"cs": {
+"Settings": "Nastavení",
+"Keycap": "Klíčenka",
+"Text Color": "Barva textu",
+"Haptic Feedback": "Hmatová zpětná vazba"
+},
+"da": {
+"Settings": "Indstillinger",
+"Keycap": "Keycap",
+"Text Color": "Tekst farve",
+"Haptic Feedback": "Haptisk feedback"
+},
+"nl": {
+"Settings": "Instellingen",
+"Keycap": "Toetsdop",
+"Text Color": "Tekst kleur",
+"Haptic Feedback": "Haptische feedback"
+},
+"en": {
+"Settings": "Settings",
+"Keycap": "Keycap",
+"Text Color": "Text Color",
+"Haptic Feedback": "Haptic Feedback"
+},
+"et": {
+"Settings": "Seaded",
+"Keycap": "Klahvikate",
+"Text Color": "Teksti värv",
+"Haptic Feedback": "Haptiline tagasiside"
+},
+"fil": {
+"Settings": "Mga setting",
+"Keycap": "Keycap",
+"Text Color": "Kulay ng teksto",
+"Haptic Feedback": "Haptic Feedback"
+},
+"fi": {
+"Settings": "asetukset",
+"Keycap": "Avainsuojus",
+"Text Color": "Tekstin väri",
+"Haptic Feedback": "Haptinen palaute"
+},
+"fr": {
+"Settings": "Paramètres",
+"Keycap": "Touche",
+"Text Color": "Couleur du texte",
+"Haptic Feedback": "Retour haptique"
+},
+"ka": {
+"Settings": "პარამეტრები",
+"Keycap": "კლავიატურა",
+"Text Color": "ტექსტის ფერი",
+"Haptic Feedback": "ჰაპტიკური კავშირი"
+},
+"de": {
+"Settings": "Einstellungen",
+"Keycap": "Tastenkappe",
+"Text Color": "Textfarbe",
+"Haptic Feedback": "Haptisches Feedback"
+},
+"el": {
+"Settings": "Ρυθμίσεις",
+"Keycap": "Keycap",
+"Text Color": "Χρώμα κειμένου",
+"Haptic Feedback": "Απτική ανάδραση"
+},
+"gu": {
+"Settings": "સેટિંગ્સ",
+"Keycap": "કીકેપ",
+"Text Color": "ટેક્સ્ટનો રંગ",
+"Haptic Feedback": "હેપ્ટિક પ્રતિસાદ"
+},
+"iw": {
+"Settings": "תורדגה",
+"Keycap": "חתפמ הסכמ",
+"Text Color": "טסקט עבצ",
+"Haptic Feedback": "יטפה בושמ"
+},
+"hi": {
+"Settings": "समायोजन",
+"Keycap": "कीकैप",
+"Text Color": "पाठ का रंग",
+"Haptic Feedback": "हैप्टिक राय"
+},
+"hu": {
+"Settings": "Beállítások",
+"Keycap": "Kulcssapka",
+"Text Color": "Szöveg szín",
+"Haptic Feedback": "Haptikus visszajelzés"
+},
+"is": {
+"Settings": "Stillingar",
+"Keycap": "Lyklahúfur",
+"Text Color": "Litur texta",
+"Haptic Feedback": "Haptic Feedback"
+},
+"id": {
+"Settings": "Pengaturan",
+"Keycap": "Tutup tombol",
+"Text Color": "Warna teks",
+"Haptic Feedback": "Umpan Balik Haptik"
+},
+"it": {
+"Settings": "Impostazioni",
+"Keycap": "Copritasto",
+"Text Color": "Colore del testo",
+"Haptic Feedback": "Feedback tattile"
+},
+"ja": {
+"Settings": "設定",
+"Keycap": "キーキャップ",
+"Text Color": "テキストの色",
+"Haptic Feedback": "触覚フィードバック"
+},
+"kn": {
+"Settings": "ಸಂಯೋಜನೆಗಳು",
+"Keycap": "ಕೀಕ್ಯಾಪ್",
+"Text Color": "ಪಠ್ಯದ ಬಣ್ಣ",
+"Haptic Feedback": "ಹ್ಯಾಪ್ಟಿಕ್ ಪ್ರತಿಕ್ರಿಯೆ"
+},
+"kk": {
+"Settings": "Параметрлер",
+"Keycap": "Перне қақпағы",
+"Text Color": "Мәтін түсі",
+"Haptic Feedback": "Гаптикалық кері байланыс"
+},
+"km": {
+"Settings": "ការកំណត់",
+"Keycap": "គ្រាប់ចុច",
+"Text Color": "ពណ៌អត្ថបទ",
+"Haptic Feedback": "មតិយោបល់ Haptic"
+},
+"ko": {
+"Settings": "설정",
+"Keycap": "키캡",
+"Text Color": "텍스트 색상",
+"Haptic Feedback": "햅틱 피드백"
+},
+"ky": {
+"Settings": "Орнотуулар",
+"Keycap": "Клавиатура",
+"Text Color": "Тексттин түсү",
+"Haptic Feedback": "Таптикалык пикир"
+},
+"lo": {
+"Settings": "ການຕັ້ງຄ່າ",
+"Keycap": "ປຸ່ມກົດ",
+"Text Color": "ສີຂໍ້ຄວາມ",
+"Haptic Feedback": "ຄໍາຕິຊົມ Haptic"
+},
+"lv": {
+"Settings": "Iestatījumi",
+"Keycap": "Taustiņu vāciņš",
+"Text Color": "Teksta krāsa",
+"Haptic Feedback": "Haptic atsauksmes"
+},
+"lt": {
+"Settings": "Nustatymai",
+"Keycap": "Klaviatūros dangtelis",
+"Text Color": "Teksto spalva",
+"Haptic Feedback": "Haptic Atsiliepimai"
+},
+"mk": {
+"Settings": "Поставки",
+"Keycap": "Капаче за клучеви",
+"Text Color": "Боја на текстот",
+"Haptic Feedback": "Хаптички повратни информации"
+},
+"ms": {
+"Settings": "tetapan",
+"Keycap": "Kap kekunci",
+"Text Color": "Warna Teks",
+"Haptic Feedback": "Maklum balas haptik"
+},
+"ml": {
+"Settings": "ക്രമീകരണങ്ങൾ",
+"Keycap": "കീക്യാപ്പ്",
+"Text Color": "വാചക നിറം",
+"Haptic Feedback": "ഹാപ്റ്റിക് ഫീഡ്ബാക്ക്"
+},
+"mr": {
+"Settings": "सेटिंग्ज",
+"Keycap": "कीकॅप",
+"Text Color": "मजकूर रंग",
+"Haptic Feedback": "हॅप्टिक फीडबॅक"
+},
+"mn": {
+"Settings": "Тохиргоо",
+"Keycap": "Товчлуурын товчлуур",
+"Text Color": "Текстийн өнгө",
+"Haptic Feedback": "Хаптик санал хүсэлт"
+},
+"ne": {
+"Settings": "सेटिङहरू",
+"Keycap": "कीक्याप",
+"Text Color": "पाठको रङ",
+"Haptic Feedback": "ह्याप्टिक प्रतिक्रिया"
+},
+"no": {
+"Settings": "Innstillinger",
+"Keycap": "Keycap",
+"Text Color": "Tekstfarge",
+"Haptic Feedback": "Haptisk tilbakemelding"
+},
+"fa": {
+"Settings": "ﺕﺎﻤﯿﻈﻨﺗ",
+"Keycap": "ﺪﯿﻠﮐ ﺵﻮﭘﺭﺩ",
+"Text Color": "ﻦﺘﻣ ﮓﻧﺭ",
+"Haptic Feedback": "ﯽﺴﻤﻟ ﺩﺭﻮﺧﺯﺎﺑ"
+},
+"pl": {
+"Settings": "Ustawienia",
+"Keycap": "Klawisz",
+"Text Color": "Kolor tekstu",
+"Haptic Feedback": "Informacje zwrotne dotykowe"
+},
+"pt": {
+"Settings": "Configurações",
+"Keycap": "Tecla",
+"Text Color": "Cor do texto",
+"Haptic Feedback": "Feedback tátil"
+},
+"pa": {
+"Settings": "ਸੈਟਿੰਗਾਂ",
+"Keycap": "ਕੀਕੈਪ",
+"Text Color": "ਟੈਕਸਟ ਰੰਗ",
+"Haptic Feedback": "ਹੈਪਟਿਕ ਫੀਡਬੈਕ"
+},
+"ro": {
+"Settings": "Setări",
+"Keycap": "Tastatura",
+"Text Color": "Culoarea textului",
+"Haptic Feedback": "Feedback-ul haptic"
+},
+"ru": {
+"Settings": "Настройки",
+"Keycap": "Кейкап",
+"Text Color": "Цвет текста",
+"Haptic Feedback": "Тактильная обратная связь"
+},
+"sr": {
+"Settings": "Подешавања",
+"Keycap": "Кеицап",
+"Text Color": "Боја текста",
+"Haptic Feedback": "Хаптиц Феедбацк"
+},
+"si": {
+"Settings": "සැකසුම්",
+"Keycap": "යතුරු කැප්",
+"Text Color": "පෙළ වර්ණය",
+"Haptic Feedback": "හප්ටික් ප්u200dරතිපෝෂණ"
+},
+"sk": {
+"Settings": "nastavenie",
+"Keycap": "Kľúčenka",
+"Text Color": "Farba textu",
+"Haptic Feedback": "Haptická spätná väzba"
+},
+"sl": {
+"Settings": "nastavitve",
+"Keycap": "Pokrovček tipke",
+"Text Color": "Barva besedila",
+"Haptic Feedback": "Haptične povratne informacije"
+},
+"es": {
+"Settings": "Ajustes",
+"Keycap": "Tecla",
+"Text Color": "Color de texto",
+"Haptic Feedback": "Retroalimentación háptica"
+},
+"sw": {
+"Settings": "Mipangilio",
+"Keycap": "Keycap",
+"Text Color": "Rangi ya maandishi",
+"Haptic Feedback": "Maoni ya Haptic"
+},
+"sv": {
+"Settings": "inställningar",
+"Keycap": "Keycap",
+"Text Color": "Text färg",
+"Haptic Feedback": "Haptisk återkoppling"
+},
+"ta": {
+"Settings": "அமைப்புகள்",
+"Keycap": "கீகேப்",
+"Text Color": "உரை நிறம்",
+"Haptic Feedback": "தீண்டும் கருத்துக்களை"
+},
+"te": {
+"Settings": "సెట్టింగ్u200cలు",
+"Keycap": "కీక్యాప్",
+"Text Color": "టెక్స్ట్ రంగు",
+"Haptic Feedback": "హాప్టిక్ ఫీడ్u200cబ్యాక్"
+},
+"th": {
+"Settings": "การตั้งค่า",
+"Keycap": "ปุ่มกด",
+"Text Color": "สีข้อความ",
+"Haptic Feedback": "การตอบสนองแบบสัมผัส"
+},
+"tr": {
+"Settings": "Ayarlar",
+"Keycap": "Klavye tuşu",
+"Text Color": "Metin Rengi",
+"Haptic Feedback": "Dokunsal geribildirim"
+},
+"uk": {
+"Settings": "Налаштування",
+"Keycap": "Клавіатура",
+"Text Color": "Колір тексту",
+"Haptic Feedback": "Тактильний зворотний зв'язок"
+},
+"ur": {
+"Settings": "ﺕﺎﺒﯿﺗﺮﺗ",
+"Keycap": "ﭗﯿﮐ ﯽﮐ",
+"Text Color": "ﮓﻧﺭ ﺎﮐ ﻦﺘﻣ",
+"Haptic Feedback": "ﮏﯿﺑ ﮉﯿﻓ ﮏﭩﭙﯿﮨ"
+},
+"vi": {
+"Settings": "Cài đặt",
+"Keycap": "Keycap",
+"Text Color": "Văn bản màu",
+"Haptic Feedback": "Phản hồi xúc giác"
+},
+"zu": {
+"Settings": "Izilungiselelo",
+"Keycap": "Keycap",
+"Text Color": "Umbala Wombhalo",
+"Haptic Feedback": "Impendulo ye-Haptic"
+}
+}

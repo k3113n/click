@@ -1,8 +1,8 @@
 import React from 'react';
 import { Text, View, Pressable, StyleSheet } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faPalette } from '@fortawesome/free-solid-svg-icons/faPalette';
+import i18n from './locales/i18n';
 import Toggle from './components/Toggle';
 import BackButton from './components/BackButton';
 
@@ -11,11 +11,11 @@ const Settings = (props) => {
         <>
             <BackButton navHandler={props.backHandler}/>
             <View style={styles.center}>
-                <Text style={[styles.rowText, styles.header]}>Settings</Text>
+                <Text style={[styles.rowText, styles.header]}>{i18n.t('Settings')}</Text>
                 <View style={styles.row}>
                     <View style={styles.rowLabel}>
                         <Toggle value={props.cap} toggleHandler={props.keycapHandler} />     
-                        <Text style={styles.rowText}>Keycap</Text>     
+                        <Text style={styles.rowText}>{i18n.t('Keycap')}</Text>     
                     </View>     
                     <Pressable
                         disabled={!props.cap}
@@ -26,7 +26,7 @@ const Settings = (props) => {
                 <View style={styles.row}>
                     <View style={styles.rowLabel}>
                         <Toggle disabled={true} value={null} toggleHandler={null} />     
-                        <Text style={styles.rowText}>Text Color</Text>
+                        <Text style={styles.rowText}>{i18n.t('Text Color')}</Text>
                     </View>
                     <Pressable
                         disabled={!props.cap}
@@ -48,7 +48,7 @@ const Settings = (props) => {
                 <View style={styles.row}>
                     <View style={styles.rowLabel}>
                         <Toggle value={props.haptics} toggleHandler={props.hapticsHandler} />     
-                        <Text style={styles.rowText}>Haptic Feedback</Text>
+                        <Text style={styles.rowText}>{i18n.t('Haptic Feedback')}</Text>
                     </View>
                 </View>
             </View>

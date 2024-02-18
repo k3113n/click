@@ -51,7 +51,8 @@
             "enableProguardInReleaseBuilds": true
           }
         }
-      ]
+      ],
+      "expo-localization"
     ],
     "extra": {
       "eas": {
