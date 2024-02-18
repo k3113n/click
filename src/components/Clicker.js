@@ -93,8 +93,8 @@ const Clicker = (props) => {
         setScale(0.95);
         playSound(getDown(name));
         if(props.haptics){
-            Haptics.notificationAsync(
-                Haptics.NotificationFeedbackType.Success
+            Haptics.impactAsync(
+                Haptics.ImpactFeedbackStyle.Heavy
             )
         }
     };
@@ -102,6 +102,11 @@ const Clicker = (props) => {
     const pressOut = async () => {
         setScale(1);
         playSound(getUp(name));
+        if(props.haptics){
+            Haptics.impactAsync(
+                Haptics.ImpactFeedbackStyle.Heavy
+            )
+        }
     };
 
 
