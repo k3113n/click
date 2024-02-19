@@ -15,6 +15,7 @@
     ],
     "ios": {
       "bundleIdentifier": "com.nellek.click",
+      "buildNumber": "1.0.1",
       "supportsTablet": true,
       "infoPlist": {
         "UIBackgroundModes": [
