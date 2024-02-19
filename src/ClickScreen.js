@@ -12,6 +12,7 @@ import { toggleLed } from './state/LedToggleSlice';
 import { setLedColor } from './state/LedColorSlice';
 import { toggleHaptics } from './state/HapticsToggleSlice';
 import Service from './helpers/Connect';
+import { preloadAudio } from './helpers/Audio';
 import Clicker from './components/Clicker';
 import Settings from './Settings';
 import Counter from './Counter';
@@ -54,7 +55,8 @@ const ClickScreen = () => {
             await Font.loadAsync({
             'Noto-mono': require('../assets/fonts/mono.ttf'),
             'Roboto': require('../assets/fonts/roboto.ttf')
-            });         
+            });
+            preloadAudio();         
             await new Promise(resolve => setTimeout(resolve, 2000));
         } catch (e) {
             console.warn(e);

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Pressable, Text, Animated, StyleSheet } from 'react-native';
-import { Audio } from 'expo-av';
+import { Sounds } from '../helpers/Audio';
 import * as Haptics from 'expo-haptics';
 import Led from './Led';
 
@@ -52,46 +52,16 @@ const getStyle = (cap = true, color, text, led = false, rgb) => {
     });
 }
 
-const keys = [
-    'blue',
-    'red'
-]
-
-const down = [
-    require('../../assets/audio/down/blue.wav'),
-    require('../../assets/audio/down/red.wav')
-];
-
-const up = [
-    require('../../assets/audio/up/blue.wav'),
-    require('../../assets/audio/up/red.wav')
-];
-
-const getDown = (name) => {
-    return down[keys.indexOf(name)];
-}
-
-const getUp = (name) => {
-    return up[keys.indexOf(name)];
-}
-
 const Clicker = (props) => {
     const [scale, setScale] = useState(1);
-    const [sound, setSound] = useState(null);
     const name = props.haptics ? 'blue' : 'red';
 
     const style = getStyle(props.cap, props.bg, props.fg, props.led, props.rgb);
 
-    const playSound = async (file) => {
-        const {sound} = await Audio.Sound.createAsync(file);
-        setSound(sound);
-        await sound.playAsync();
-    }
-
     const pressIn = async () => {
         props.handler();
         setScale(0.95);
-        playSound(getDown(name));
+        Sounds[name+'Down'].replayAsync();
         if(props.haptics){
             Haptics.impactAsync(
                 Haptics.ImpactFeedbackStyle.Heavy
@@ -101,22 +71,13 @@ const Clicker = (props) => {
 
     const pressOut = async () => {
         setScale(1);
-        playSound(getUp(name));
+        Sounds[name+'Up'].replayAsync();
         if(props.haptics){
             Haptics.impactAsync(
                 Haptics.ImpactFeedbackStyle.Heavy
             )
         }
     };
-
-
-    useEffect(() => {
-        return sound
-        ? () => {
-            sound.unloadAsync();
-          }
-        : undefined;
-    }, [sound]);
 
     return  (
         <View style={[{ padding: "1%", paddingTop: 0}]}>
