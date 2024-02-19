@@ -1,15 +1,13 @@
 import React from "react";
-import ColorPicker, { Panel1, Preview, HueSlider } from 'reanimated-color-picker';
+import ColorPicker, { Panel1, HueSlider } from 'reanimated-color-picker';
 
 const PersistentColorPicker = (props) => {
     return (
         <ColorPicker 
             value={props.color} 
-            onComplete={props.handler}
-        >
-          <Preview />
-          <Panel1 />
-          <HueSlider />
+            onComplete={props.handler}>
+            <Panel1 style={{height: "80%"}}/>
+            <HueSlider />
         </ColorPicker>
     );
 }

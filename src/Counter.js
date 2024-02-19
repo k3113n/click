@@ -12,9 +12,11 @@ const Counter = (props) => {
 
     return (
         <>
-            <Pressable style={styles.settingsOpen}
-                onPress={props.navHandler}>
-                  <FontAwesomeIcon icon={faGear} color={'gray'} size={32}/>
+            <Pressable 
+              style={styles.settingsOpen}
+              accessibilityLabel='Open Settings'
+              onPress={props.navHandler}>
+                <FontAwesomeIcon icon={faGear} color={'gray'} size={32}/>
             </Pressable>
             <Text
                 adjustsFontSizeToFit

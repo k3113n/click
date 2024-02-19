@@ -6,6 +6,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowLeft';
 const BackButton = (props) => {
     return (
         <Pressable
+            accessibilityLabel='Back to Previous Screen'
             onPress={() => props.navHandler()}>
             <View style={styles.back}>
                 <FontAwesomeIcon icon={faArrowLeft} color={"gray"} size={32} />

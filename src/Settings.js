@@ -14,10 +14,12 @@ const Settings = (props) => {
                 <Text style={[styles.rowText, styles.header]}>{i18n.t('Settings')}</Text>
                 <View style={styles.row}>
                     <View style={styles.rowLabel}>
-                        <Toggle value={props.cap} toggleHandler={props.keycapHandler} />     
+                        <Toggle label={"Toggle Keycap"} value={props.cap} toggleHandler={props.keycapHandler} />     
                         <Text style={styles.rowText}>{i18n.t('Keycap')}</Text>     
                     </View>     
                     <Pressable
+                        accessibilityLabel='Change Keycap Background Color'
+                        style={styles.palette}
                         disabled={!props.cap}
                         onPress={props.bgHandler}>
                         <FontAwesomeIcon icon={faPalette} color={props.cap ? 'burlywood' : 'lightgray'} size={32}/>
@@ -29,6 +31,8 @@ const Settings = (props) => {
                         <Text style={styles.rowText}>{i18n.t('Text Color')}</Text>
                     </View>
                     <Pressable
+                        accessibilityLabel='Change Keycap Text Color'
+                        style={styles.palette}
                         disabled={!props.cap}
                         onPress={props.txtHandler}>
                         <FontAwesomeIcon icon={faPalette} color={props.cap ? 'burlywood' : 'lightgray'} size={32}/>
@@ -36,10 +40,12 @@ const Settings = (props) => {
                 </View>
                 <View style={styles.row}>
                     <View style={styles.rowLabel}>
-                        <Toggle value={props.led} toggleHandler={props.ledHandler} />           
+                        <Toggle label={"Toggle LED"} value={props.led} toggleHandler={props.ledHandler} />           
                         <Text style={styles.rowText}>LED</Text>
                     </View>
                     <Pressable
+                        accessibilityLabel='Change LED Color'
+                        style={styles.palette}
                         disabled={!props.led}
                         onPress={props.rgbHandler}>
                         <FontAwesomeIcon icon={faPalette} color={props.led ? 'burlywood' : 'lightgray'} size={32}/>
@@ -47,7 +53,7 @@ const Settings = (props) => {
                 </View>
                 <View style={styles.row}>
                     <View style={styles.rowLabel}>
-                        <Toggle value={props.haptics} toggleHandler={props.hapticsHandler} />     
+                        <Toggle label={"Toggle Haptic Feedback"} value={props.haptics} toggleHandler={props.hapticsHandler} />     
                         <Text style={styles.rowText}>{i18n.t('Haptic Feedback')}</Text>
                     </View>
                 </View>
@@ -87,6 +93,11 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     fontSize: 20
   },
+  palette: {
+    top: 8,
+    height: 48,
+    width: 48
+  }
 });
 
 export default Settings;
