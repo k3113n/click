@@ -16,6 +16,7 @@ const Toggle = (props) => {
 
 const styles = StyleSheet.create({
     switch: {
+        top: 8,
         height: 48,
         width: 48
     }
