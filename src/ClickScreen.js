@@ -35,7 +35,7 @@ const ClickScreen = () => {
 
     const update = (value) => {
         if(value > count) {
-        dispatch(set(value));
+            dispatch(set(value));
         }
     }
 

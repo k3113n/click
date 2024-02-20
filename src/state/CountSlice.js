@@ -6,7 +6,7 @@ const CountSlice = createSlice({
         value: 0,
      },
     reducers: {
-        set: (state, action) => { state.value = Number(action.payload)||0 > state.value ? action.payload : state.value },
+        set: (state, action) => { state.value = (Number(action.payload)||0) > state.value ? action.payload : state.value },
     },
 });
 
