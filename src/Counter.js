@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
     right: 0,
     top: '2.5%',
     padding: 8,
+    zIndex: 2
   }
 });
 
