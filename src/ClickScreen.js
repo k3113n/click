@@ -25,13 +25,13 @@ const ClickScreen = () => {
     const [screen, setScreen] = useState('counter'); 
 
     const dispatch = useDispatch();
-    const count = useSelector((state) => state.count.value);
-    const keycap = useSelector((state) => state.keycap.value);
-    const bg = useSelector((state) => state.bg.value);
-    const txt = useSelector((state) => state.txt.value);
-    const led = useSelector((state) => state.led.value);
-    const rgb = useSelector((state) => state.rgb.value);
-    const haptics = useSelector((state) => state.haptics.value);
+    const count = useSelector(state => state.count.value);
+    const keycap = useSelector(state => state.keycap.value);
+    const bg = useSelector(state => state.bg.value);
+    const txt = useSelector(state => state.txt.value);
+    const led = useSelector(state => state.led.value);
+    const rgb = useSelector(state => state.rgb.value);
+    const haptics = useSelector(state => state.haptics.value);
 
     const update = (value) => {
         if(value > count) {
@@ -42,14 +42,14 @@ const ClickScreen = () => {
     const click = () => {
         const value = count + 1;
         update(value);
-        ws.current.send(value.toString());
+       // ws.current.send(value.toString());
     }
 
-    const ws = useRef(new Service());
+    //const ws = useRef(new Service());
 
     useEffect(() => {
-        const socket = new Service('wss://greater.nellek.com', update);
-        ws.current = socket;
+       // const socket = new Service('wss://greater.nellek.com', update);
+       // ws.current = socket;
         async function prepare(){
         try {
             await Font.loadAsync({
