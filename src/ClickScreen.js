@@ -42,14 +42,14 @@ const ClickScreen = () => {
     const click = () => {
         const value = count + 1;
         update(value);
-       // ws.current.send(value.toString());
+        ws.current.send(value.toString());
     }
 
-    //const ws = useRef(new Service());
+    const ws = useRef(new Service());
 
     useEffect(() => {
-       // const socket = new Service('wss://greater.nellek.com', update);
-       // ws.current = socket;
+        const socket = new Service('wss://greater.nellek.com', update);
+        ws.current = socket;
         async function prepare(){
         try {
             await Font.loadAsync({
