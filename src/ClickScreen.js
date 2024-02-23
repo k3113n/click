@@ -11,13 +11,14 @@ import { setKeycapTxtColor } from './state/KeycapTxtColorSlice';
 import { toggleLed } from './state/LedToggleSlice';
 import { setLedColor } from './state/LedColorSlice';
 import { toggleHaptics } from './state/HapticsToggleSlice';
-import { log } from './state/ScoreSlice';
+import { log, flush } from './state/ScoreSlice';
 import Service from './helpers/Connect';
 import { preloadAudio } from './helpers/Audio';
 import Clicker from './components/Clicker';
 import Settings from './Settings';
 import Counter from './Counter';
 import ColorSelect from './ColorSelect';
+import isCombo from './helpers/Combo';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -27,6 +28,7 @@ const ClickScreen = () => {
 
     const dispatch = useDispatch();
     const count = useSelector(state => state.count.value);
+    const score = useSelector(state => state.score);
     const keycap = useSelector(state => state.keycap.value);
     const bg = useSelector(state => state.bg.value);
     const txt = useSelector(state => state.txt.value);
@@ -40,10 +42,24 @@ const ClickScreen = () => {
         }
     }
 
+    const score_update = () => {
+        dispatch(log());
+        if(score.clicks.length > 2) {
+            if(isCombo(score.clicks)){
+                console.log("current combo: "+score.clicks.length);
+            } else {
+                console.log("combo ended: "+(score.clicks.length - 1));
+                dispatch(flush());
+                console.log('clicks: '+score.clicks);
+            }
+        }
+
+    }
+
     const click = () => {
         const value = count + 1;
         update(value);
-        dispatch(log());
+        score_update();
         ws.current.send(value.toString());
     }
 
