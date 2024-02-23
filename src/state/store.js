@@ -2,6 +2,7 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import CountReducer from './CountSlice';
+import ScoreSlice from './ScoreSlice';
 import KeycapReducer from './KeycapToggleSlice';
 import KeycapBgColorReducer from './KeycapBgColorSlice';
 import KeycapTxtColorReducer from './KeycapTxtColorSlice';
@@ -14,6 +15,7 @@ const persistConfig = {
   storage: AsyncStorage,
   whitelist: [
     'count', 
+    'score',
     'keycap', 
     'bg', 
     'txt', 
@@ -25,6 +27,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   count: CountReducer,
+  score: ScoreSlice,
   keycap: KeycapReducer,
   bg: KeycapBgColorReducer,
   txt: KeycapTxtColorReducer,

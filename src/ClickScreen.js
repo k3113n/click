@@ -11,6 +11,7 @@ import { setKeycapTxtColor } from './state/KeycapTxtColorSlice';
 import { toggleLed } from './state/LedToggleSlice';
 import { setLedColor } from './state/LedColorSlice';
 import { toggleHaptics } from './state/HapticsToggleSlice';
+import { log } from './state/ScoreSlice';
 import Service from './helpers/Connect';
 import { preloadAudio } from './helpers/Audio';
 import Clicker from './components/Clicker';
@@ -42,6 +43,7 @@ const ClickScreen = () => {
     const click = () => {
         const value = count + 1;
         update(value);
+        dispatch(log());
         ws.current.send(value.toString());
     }
 
