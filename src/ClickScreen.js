@@ -44,7 +44,7 @@ const ClickScreen = () => {
 
     const score_update = () => {
         dispatch(log());
-        if(score.clicks.length > 2) {
+        if(score.clicks.length > 3) {
             if(isCombo(score.clicks)){
                 console.log("current combo: "+score.clicks.length);
             } else {

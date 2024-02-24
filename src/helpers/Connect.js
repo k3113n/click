@@ -1,10 +1,16 @@
 class Service {
     constructor(url = "", onmessage = (n) => {}) {
+        if(!Service.instance) {
         this.url = url;
         this.socket = null;
         this.update = onmessage;
         this.connected = false;
         if(url !== "") this.connect();
+
+        Service.instance = this;
+        }
+
+        return Service.instance;
     }
 
     connect() {
