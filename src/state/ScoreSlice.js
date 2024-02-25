@@ -3,19 +3,15 @@ import { createSlice } from '@reduxjs/toolkit';
 const ScoreSlice = createSlice({
     name: 'score',
     initialState: { 
-        count: 0,
-        clicks: []
+        count: 0
     },
     reducers: {
         log: ( state ) => { 
             state.count += 1;
-            state.clicks.push(Date.now());
+            console.log(state.count);
         },
-        flush: ( state ) => {
-            state.clicks = []
-        }
     }
 });
 
-export const { log, flush } = ScoreSlice.actions;
+export const { log } = ScoreSlice.actions;
 export default ScoreSlice.reducer;

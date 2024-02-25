@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { View, SafeAreaView, Image, StyleSheet } from 'react-native';
+import { View, SafeAreaView, Image, StyleSheet, AppState } from 'react-native';
 import * as Font from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
@@ -11,24 +11,25 @@ import { setKeycapTxtColor } from './state/KeycapTxtColorSlice';
 import { toggleLed } from './state/LedToggleSlice';
 import { setLedColor } from './state/LedColorSlice';
 import { toggleHaptics } from './state/HapticsToggleSlice';
-import { log, flush } from './state/ScoreSlice';
+import { log } from './state/ScoreSlice';
 import Service from './helpers/Connect';
 import { preloadAudio } from './helpers/Audio';
 import Clicker from './components/Clicker';
 import Settings from './Settings';
 import Counter from './Counter';
 import ColorSelect from './ColorSelect';
-import isCombo from './helpers/Combo';
+import Number from './components/Numbers';
 
 SplashScreen.preventAutoHideAsync();
 
 const ClickScreen = () => {
     const [loaded, setLoaded] = useState(false);
     const [screen, setScreen] = useState('counter'); 
+    const [clicks, setClicks] = useState([]);
+    const [numbers, setNumbers] = useState([]);
 
     const dispatch = useDispatch();
     const count = useSelector(state => state.count.value);
-    const score = useSelector(state => state.score);
     const keycap = useSelector(state => state.keycap.value);
     const bg = useSelector(state => state.bg.value);
     const txt = useSelector(state => state.txt.value);
@@ -44,30 +45,30 @@ const ClickScreen = () => {
 
     const score_update = () => {
         dispatch(log());
-        if(score.clicks.length > 3) {
-            if(isCombo(score.clicks)){
-                console.log("current combo: "+score.clicks.length);
-            } else {
-                console.log("combo ended: "+(score.clicks.length - 1));
-                dispatch(flush());
-                console.log('clicks: '+score.clicks);
-            }
-        }
+        setClicks([...clicks, Date.now()]);
+    }
 
+    const add_number = () => {
+        const id = numbers.length + 1;
+        setNumbers(previous => [...previous, {id, duration: 2000}]);
+    }
+
+    const destroy = (id) => {
+        setNumbers(previous => previous.filter(number => number.id !== id));
     }
 
     const click = () => {
         const value = count + 1;
         update(value);
         score_update();
+        add_number();
         ws.current.send(value.toString());
     }
 
-    const ws = useRef(new Service());
+    const ws = useRef(null);
 
     useEffect(() => {
-        const socket = new Service('wss://greater.nellek.com', update);
-        ws.current = socket;
+        ws.current = new Service('wss://greater.nellek.com', update);
         async function prepare(){
         try {
             await Font.loadAsync({
@@ -75,7 +76,6 @@ const ClickScreen = () => {
             'Roboto': require('../assets/fonts/roboto.ttf')
             });
             preloadAudio();         
-            await new Promise(resolve => setTimeout(resolve, 2000));
         } catch (e) {
             console.warn(e);
         } finally {
@@ -137,6 +137,14 @@ const ClickScreen = () => {
                 <View style={[styles.top]}>
                     {renderNavigation()}
                 </View>
+                {numbers.map(number => (
+                    <Number
+                    key={number.id}
+                    id={number.id}
+                    duration={number.duration}
+                    destroy={destroy}
+                    />
+                ))}
                 <View style={[styles.bottom]}>
                     <View style={styles.plate}>
                     <Clicker 
